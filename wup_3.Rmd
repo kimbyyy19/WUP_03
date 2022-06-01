@@ -35,6 +35,11 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+
+
+The back row seen to have a lager different between the seat and the middle row.
+
+
 ## Numerical Summarys 
 
 ## Inferential Tests
