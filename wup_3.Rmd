@@ -39,8 +39,23 @@ The back row seen to have a lager difference between the seat and the middle row
 
 
 ## Numerical Summarys 
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+
 
 ## Inferential Tests
+
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+Since the P value 
+
+```{r}
+plot(TukeyHSD(model1))
+```
+
 
 ## Conclusions
 
