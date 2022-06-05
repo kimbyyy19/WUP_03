@@ -42,6 +42,8 @@ The back row seen to have a lager difference between the seat and the middle row
 ```{r}
 favstats(alcohol~Seat,data=davisdata)
 ```
+The mean for the people in the back has about three times as many of the people in the middle seats and even more than the people in the front as well.
+
 
 
 ## Inferential Tests
@@ -50,7 +52,7 @@ favstats(alcohol~Seat,data=davisdata)
 model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
-Since the P value 
+ 
 
 ```{r}
 plot(TukeyHSD(model1))
