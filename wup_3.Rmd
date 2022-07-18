@@ -35,15 +35,14 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+Based on the boxplot the back rows consumes more alcohol than both the front and the middle rows.
 
-The people in the back seat have a higher consumption of alcohol compared to the people in the middle and the front seat. The median for the people in the back is higher than the top 75 % of teh front seat and the middle seat people.
 
 ## Numerical Summarys 
 ```{r}
 favstats(alcohol~Seat,data=davisdata)
 ```
-The mean for the people in the back has about three times as many of the people in the middle seats and even more than the people in the front as well.
-
+The mean for the back rows is three times as high as the middle rows and nearly five times as high as the front rows.
 
 
 ## Inferential Tests
@@ -52,18 +51,19 @@ The mean for the people in the back has about three times as many of the people 
 model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
- 
+ Since the p value from one way anova was such a small number we are going to follow up with a tukeyhsd.
 
 ```{r}
 plot(TukeyHSD(model1))
 ```
 
+Since the confidence intervals of the front-back and the middle-back are below zero that shows they are significantly different.
 
 
-The line represents a 95 confidence interval about where the difference and it doesn’t have zero it. When we compare the middle and the back row it grows bigger than the middle row so when going to subtract the got to get the confidence interval is full of negative numbers, but finally we compare the middle in the front row and zero is in that confidence interval. They live above the zero is gone away. Since no line is cut there is a difference.
+
 
 
 ## Conclusions
-I have concluded that most people in the back had the most drink they were the highest in the mean as mean in the alcohol they consumed. The middle row had the most people in it about double with the front and the people in the back seat.
+The back rows consumed more alcohol than the middle and the front rows. This is evident by the mean of the back rows being significantly larger than that of the middle and front rows.
 
 
